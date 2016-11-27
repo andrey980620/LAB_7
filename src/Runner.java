@@ -11,18 +11,7 @@ public class Runner {
 
         ArrayList<String> numericWords = new ArrayList<>();
         ArrayList<String> simpleWords = new ArrayList<>();
-
-        while (in.hasNextLine()) {
-            ArrayList<String> tokens = Utils.getTokens(in.nextLine());
-            System.out.println(tokens);
-            for (int i = 0; i < tokens.size(); i++) {
-                if (Utils.isNumericWord(tokens.get(i)))
-                    numericWords.add(tokens.get(i));
-                else if (Utils.isSimpleWord(tokens.get(i)))
-                    simpleWords.add(tokens.get(i));
-            }
-
-        }
+        Utils.fill(in,numericWords,simpleWords);
 
         System.out.println("Количество цифровых лексем:" + numericWords.size());
         System.out.println("Количество буквенных лексем:" + simpleWords.size());
